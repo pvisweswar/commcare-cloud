@@ -1,5 +1,8 @@
 ---
 
+- include_role:
+    name: python
+
 - name: Get current couchdb path
   stat:
     path: /usr/local/couchdb2/couchdb
@@ -12,9 +15,6 @@
 - name: Print current couchdb version
   debug:
     var: couchdb_version_current
-
-- name: Update setuptools
-  pip: name=setuptools state=latest
 
 - name: Install ndg-httpsclient so we can download couch
   pip:
