@@ -22,11 +22,11 @@ args==0.1.0
     # via clint
 async-timeout==4.0.2
     # via redis
-attrs==21.2.0
+attrs==25.3.0
     # via commcare-cloud (setup.py)
-boto3==1.18.57
+boto3==1.39.3
     # via commcare-cloud (setup.py)
-botocore==1.21.57
+botocore==1.39.3
     # via
     #   boto3
     #   s3transfer
@@ -42,7 +42,7 @@ clint==0.5.1
     # via commcare-cloud (setup.py)
 couchdb-cluster-admin==0.7.2
     # via commcare-cloud (setup.py)
-cryptography==43.0.1
+cryptography==45.0.5
     # via
     #   ansible-core
     #   commcare-cloud (setup.py)
@@ -67,8 +67,6 @@ greenlet==3.0.0
     # via gevent
 idna==3.7
     # via requests
-importlib-metadata==3.1.0
-    # via commcare-cloud (setup.py)
 jinja2==3.1.6
     # via
     #   ansible-core
@@ -101,7 +99,7 @@ pygments==2.15.0
     # via ansible-inventory
 pyjwt[crypto]==2.4.0
     # via pygithub
-pynacl==1.4.0
+pynacl==1.5.0
     # via pygithub
 pyparsing==3.0.9
     # via packaging
@@ -122,15 +120,13 @@ requests==2.32.4
     #   pygithub
 resolvelib==0.5.4
     # via ansible-core
-s3transfer==0.5.0
+s3transfer==0.13.0
     # via boto3
 simplejson==3.17.5
     # via commcare-cloud (setup.py)
 six==1.16.0
     # via
-    #   commcare-cloud (setup.py)
     #   jsonobject
-    #   pynacl
     #   python-dateutil
 smmap==5.0.0
     # via gitdb
@@ -138,15 +134,13 @@ tabulate==0.8.9
     # via commcare-cloud (setup.py)
 typing-extensions==4.12.2
     # via pygithub
-urllib3==1.26.19
+urllib3==2.5.0
     # via
     #   botocore
     #   pygithub
     #   requests
 wrapt==1.13.1
     # via deprecated
-zipp==3.19.1
-    # via importlib-metadata
 zope-event==4.5.0
     # via gevent
 zope-interface==5.4.0
