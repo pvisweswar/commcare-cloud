@@ -33,7 +33,7 @@ servers:
     os: jammy
 
   - server_name: "djangomanage3-india"
-    server_instance_type: "t3a.medium"
+    server_instance_type: "t3a.small"
     network_tier: "app-private"
     az: "a"
     volume_size: 80
@@ -207,7 +207,7 @@ servers:
     os: jammy 
 
   - server_name: "formplayer3-india"
-    server_instance_type: "t3a.xlarge"
+    server_instance_type: "r6a.large"
     network_tier: "app-private"
     az: "a"
     volume_size: 200
@@ -334,7 +334,7 @@ rds_instances:
     storage: 500
     storage_type: gp3
     multi_az: true
-    engine_version: "14.4"
+    engine_version: "14.18"
     params:
       max_connections: "125"
 

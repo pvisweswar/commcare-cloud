@@ -30,7 +30,7 @@ servers:
     os: jammy
 
   - server_name: "djangomanage_a1-eu"
-    server_instance_type: "t3a.medium"
+    server_instance_type: "t3a.small"
     network_tier: "app-private"
     az: "a"
     volume_size: 80
@@ -331,7 +331,7 @@ rds_instances:
     storage: 500
     storage_type: gp3
     multi_az: true
-    engine_version: "14"
+    engine_version: "14.18"
     params:
       max_connections: "125"
 
