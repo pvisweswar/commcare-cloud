@@ -26,9 +26,15 @@ update_steps: |
      node_to_upgrade="<IP_OF_NODE>"
      node_name_to_upgrade="<NODE_NAME_IN_INVENTORY>"
      couch_coordinator="<IP_OF_ANY_OTHER_NODE>"
-     
-  2. If the node is behind a Load Balancer, deregister it from the target group now to stop incoming traffic.
-  3. Stop the Pillowtop services on the control machine:
+
+  2. Fetch CouchDB credentials securely from secrets:
+     sh
+     username=$(cchq <env> secrets view COUCH_USERNAME)
+     password=$(cchq <env> secrets view COUCH_PASSWORD)
+
+  3. If the node is behind a Load Balancer, deregister it from the target group to stop incoming traffic.
+
+  4. Stop the Pillowtop services on the control machine:
      sh
      cchq <env> service pillowtop stop --only=AppDbChangeFeedPillow,DefaultChangeFeedPillow,DomainDbKafkaPillow,UserGroupsDbKafkaPillow
      
@@ -47,7 +53,7 @@ update_steps: |
      sh
      cchq <env> run-shell-command ${node_name_to_upgrade} 'systemctl stop monit && systemctl stop couchdb' -b
      
-  4. *Recommended:* Take a manual snapshot of the data volume/disk before proceeding.
+  4. Take a manual snapshot of the EBS data volume before proceeding. This is a mandatory step to ensure rollback is possible if needed. Ensure you take a backup of the data volume mounted at <mount_path> (for example, /opt/data or /var/lib/couchdb) before continuing.
 
   ### 3. Deploy the Upgrade
   1. Run the deployment playbook, limited to the specific node:
